@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --color-brand: #0f4c81;
+  --color-brand-strong: #0b3a63;
+}
+
+@layer base {
+  body {
+    @apply bg-base-200 text-base-content antialiased;
+    margin: 0;
+  }
+}
+
+.btn-primary-custom {
+  @apply rounded-md bg-brand px-5 py-2.5 font-medium text-white shadow-md transition-colors duration-200 hover:bg-brand-strong cursor-pointer;
+}
+
+.glass-surface {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.gradient-surface {
+  background: linear-gradient(135deg, #0f4c81 0%, #1e7fc3 50%, #06b6d4 100%);
+  color: white;
+}

@@ -1,0 +1,19 @@
+.footer {
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 1.5rem 0;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}
+
+.footer h2 {
+  font-weight: 700;
+}
