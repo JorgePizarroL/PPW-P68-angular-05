@@ -12,7 +12,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 // (opcional) Analytics
 import { provideAnalytics, getAnalytics } from '@angular/fire/analytics';
 
-// Firebase config (la que te dio tu docente)
+
 const firebaseConfig = {
   apiKey: "AIzaSyALcZoyrtuCpS6rYg6xEh0j89SaDBPvgHc",
   authDomain: "ppw-angular-06.firebaseapp.com",
@@ -36,7 +36,6 @@ export const appConfig: ApplicationConfig = {
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
 
-    // Opcional: Analytics (solo si lo necesitas)
     provideAnalytics(() => getAnalytics()),
   ],
 };
