@@ -10,6 +10,8 @@ import { UiComponentsPage } from './features/ui-components/pages/ui-components-p
 import { SimpsonsPageComponent } from './features/simpsons/pages/simpsons-page/simpsons-page';
 import { SimpsonDetailPageComponent } from './features/simpsons/pages/simpson-detail-page/simpson-detail-page';
 import { AuthPageComponent } from './features/auth/pages/auth-page/auth-page';
+import { authGuard } from './core/guards/auth-guard';
+import { guestGuard } from './core/guards/guest-guard';
 
 
 export const routes: Routes = [
@@ -23,7 +25,8 @@ export const routes: Routes = [
   },
   {
     path: 'students/:id',
-    component: StudentDetailPage
+    component: StudentDetailPage,
+    canActivate: [authGuard]
   },
   {
     path: 'layouts',
@@ -35,12 +38,14 @@ export const routes: Routes = [
   },
   {
     path: 'profile',
-    component: ProfilePage
+    component: ProfilePage,
+    canActivate: [authGuard]
   },
   {
     path: 'project-config',
     loadComponent: () =>
-      import('./features/project/pages/project-config-page/project-config-page')
+      import('./features/project/pages/project-config-page/project-config-page'),
+    canActivate: [authGuard]
   },
   {
     path: 'ui-components',
@@ -52,11 +57,14 @@ export const routes: Routes = [
   },
   {
     path: 'simpsons/:id',
-    component: SimpsonDetailPageComponent
+    component: SimpsonDetailPageComponent,
+    canActivate: [authGuard]
   },
   { path: 'auth', 
-    component: AuthPageComponent 
+    component: AuthPageComponent,
+    canActivate: [guestGuard]
   },
+  
   {
     path: '**',
     redirectTo: ''
